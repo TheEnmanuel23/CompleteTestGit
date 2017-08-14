@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
 import config from '../fb_config'
+import { Carousel } from 'react-materialize';
 
 if (!firebase.apps.length)
   firebase.initializeApp(config)
@@ -24,6 +25,24 @@ class Preguntas extends Component {
 		}
 		else {
 			return <div>
+				<Carousel options={{ fullWidth: true }}>
+	<div className='red'>
+		<h2>First Panel</h2>
+		<p className='white-text'>This is your first panel</p>
+	</div>
+	<div className='amber'>
+		<h2>Second Panel</h2>
+		<p className='white-text'>This is your second panel</p>
+	</div>
+	<div className='green'>
+		<h2>Third Panel</h2>
+		<p className='white-text'>This is your third panel</p>
+	</div>
+	<div className='blue'>
+		<h2>Fourth Panel</h2>
+		<p className='white-text'>This is your fourth panel</p>
+	</div>
+			</Carousel>
 				<form id="test" onSubmit={this.sendDataTest} >
 					<div>
 						<p>¿Qué es git</p>
