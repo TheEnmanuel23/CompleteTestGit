@@ -22518,6 +22518,12 @@ var Preguntas = function (_Component) {
 	}
 
 	_createClass(Preguntas, [{
+		key: 'siguiente',
+		value: function siguiente(e) {
+			$('.carousel').carousel('next');
+			e.preventDefault();
+		}
+	}, {
 		key: 'loadTest',
 		value: function loadTest() {
 			if (this.state.testListo) {
@@ -22537,136 +22543,129 @@ var Preguntas = function (_Component) {
 					'div',
 					null,
 					_react2.default.createElement(
-						_reactMaterialize.Carousel,
-						{ options: { fullWidth: true } },
-						_react2.default.createElement(
-							'div',
-							{ className: 'red' },
-							_react2.default.createElement(
-								'h2',
-								null,
-								'First Panel'
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'white-text' },
-								'This is your first panel'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'amber' },
-							_react2.default.createElement(
-								'h2',
-								null,
-								'Second Panel'
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'white-text' },
-								'This is your second panel'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'green' },
-							_react2.default.createElement(
-								'h2',
-								null,
-								'Third Panel'
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'white-text' },
-								'This is your third panel'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'blue' },
-							_react2.default.createElement(
-								'h2',
-								null,
-								'Fourth Panel'
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'white-text' },
-								'This is your fourth panel'
-							)
-						)
-					),
-					_react2.default.createElement(
 						'form',
 						{ id: 'test', onSubmit: this.sendDataTest },
 						_react2.default.createElement(
-							'div',
-							null,
+							_reactMaterialize.Carousel,
+							{ options: { fullWidth: true } },
 							_react2.default.createElement(
-								'p',
+								'div',
 								null,
-								'\xBFQu\xE9 es git'
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement(
+										'span',
+										null,
+										'1'
+									),
+									' \xBFQu\xE9 es git'
+								),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p1', type: 'radio', value: 'r1', label: 'Un control de versiones', defaultChecked: 'checked' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p1', type: 'radio', value: 'r2', label: 'Un gestor de repositorios' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p1', type: 'radio', value: 'r3', label: 'Gestor de repositorios local' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p1', type: 'radio', value: 'r4', label: 'Ninguna de las anteriores<' }),
+								_react2.default.createElement(
+									_reactMaterialize.Button,
+									{ waves: 'blue', onClick: this.siguiente },
+									'Siguiente'
+								)
 							),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p1', type: 'radio', value: 'r1', label: 'Un control de versiones', defaultChecked: 'checked' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p1', type: 'radio', value: 'r2', label: 'Un gestor de repositorios' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p1', type: 'radio', value: 'r3', label: 'Gestor de repositorios local' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p1', type: 'radio', value: 'r4', label: 'Ninguna de las anteriores<' })
-						),
-						_react2.default.createElement(
-							'div',
-							null,
 							_react2.default.createElement(
-								'p',
+								'div',
 								null,
-								'\xBFC\xF3mo funciona git?'
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement(
+										'span',
+										null,
+										'2'
+									),
+									' \xBFC\xF3mo funciona git?'
+								),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r1', label: 'Crea una copia exacta de todos los archivos modificados', defaultChecked: 'checked' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r2', label: 'Crea una copia exacta de todos los archivos incluyendo los no modificados' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r3', label: 'Crea una copia del archivo modificado y guarda una referencia a esa modificaci\xF3n' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r3', label: 'Crea un imagen de el estado del proyecto y guarda una referencia a esa imagen<' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r5', label: 'Crea una imagen solo del archivo modificado y guarda una referencia a esa imagen' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r6', label: 'Todas las anteriores son correctas' }),
+								_react2.default.createElement(
+									_reactMaterialize.Button,
+									{ waves: 'blue', onClick: this.siguiente },
+									'Siguiente'
+								)
 							),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r1', label: 'Crea una copia exacta de todos los archivos modificados', defaultChecked: 'checked' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r2', label: 'Crea una copia exacta de todos los archivos incluyendo los no modificados' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r3', label: 'Crea una copia del archivo modificado y guarda una referencia a esa modificaci\xF3n' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r3', label: 'Crea un imagen de el estado del proyecto y guarda una referencia a esa imagen<' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r5', label: 'Crea una imagen solo del archivo modificado y guarda una referencia a esa imagen' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p2', type: 'radio', value: 'r6', label: 'Todas las anteriores son correctas' })
-						),
-						_react2.default.createElement(
-							'div',
-							null,
 							_react2.default.createElement(
-								'p',
+								'div',
 								null,
-								'Los 4 estados de git son'
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement(
+										'span',
+										null,
+										'3'
+									),
+									' Los 4 estados de git son'
+								),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p3', type: 'radio', value: 'r2', label: 'Creaci\xF3n, modificaci\xF3n, preparaci\xF3n y confirmaci\xF3n', defaultChecked: 'checked' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p3', type: 'radio', value: 'r3', label: 'Modificaci\xF3n, preparaci\xF3n, confirmaci\xF3n y elminaci\xF3n' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p3', type: 'radio', value: 'r4', label: 'No son 4 estados, son 5, Creaci\xF3n, modificaci\xF3n, preparaci\xF3n, confirmaci\xF3n, y eliminaci\xF3n' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p3', type: 'radio', value: 'r5', label: 'No son 4 estados, son 3, modificaci\xF3n, preparaci\xF3n y confirmaci\xF3n' }),
+								_react2.default.createElement(
+									_reactMaterialize.Button,
+									{ waves: 'blue', onClick: this.siguiente },
+									'Siguiente'
+								)
 							),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p3', type: 'radio', value: 'r2', label: 'Creaci\xF3n, modificaci\xF3n, preparaci\xF3n y confirmaci\xF3n', defaultChecked: 'checked' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p3', type: 'radio', value: 'r3', label: 'Modificaci\xF3n, preparaci\xF3n, confirmaci\xF3n y elminaci\xF3n' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p3', type: 'radio', value: 'r4', label: 'No son 4 estados, son 5, Creaci\xF3n, modificaci\xF3n, preparaci\xF3n, confirmaci\xF3n, y eliminaci\xF3n' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p3', type: 'radio', value: 'r5', label: 'No son 4 estados, son 3, modificaci\xF3n, preparaci\xF3n y confirmaci\xF3n' })
-						),
-						_react2.default.createElement(
-							'div',
-							null,
 							_react2.default.createElement(
-								'p',
+								'div',
 								null,
-								'Seleccione la afirmaci\xF3n err\xF3nea'
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement(
+										'span',
+										null,
+										'4'
+									),
+									' Seleccione la afirmaci\xF3n err\xF3nea'
+								),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p4', type: 'radio', value: 'r1', label: 'Si modifico un archivo, puedo recuperar el estado anterior<', defaultChecked: 'checked' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p4', type: 'radio', value: 'r2', label: 'Si elimino un archivo, lo puedo recuperar al moverme un estado anterior del proyecto' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p4', type: 'radio', value: 'r3', label: 'Hay 3 estados que conforman el flujo de trabajo local de git' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p4', type: 'radio', value: 'r4', label: 'Git guarda el nombre del archivo y el c\xF3digo hash de sus contenidos para identifar los cambios' }),
+								_react2.default.createElement(
+									_reactMaterialize.Button,
+									{ waves: 'blue', onClick: this.siguiente },
+									'Siguiente'
+								)
 							),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p4', type: 'radio', value: 'r1', label: 'Si modifico un archivo, puedo recuperar el estado anterior<', defaultChecked: 'checked' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p4', type: 'radio', value: 'r2', label: 'Si elimino un archivo, lo puedo recuperar al moverme un estado anterior del proyecto' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p4', type: 'radio', value: 'r3', label: 'Hay 3 estados que conforman el flujo de trabajo local de git' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p4', type: 'radio', value: 'r4', label: 'Git guarda el nombre del archivo y el c\xF3digo hash de sus contenidos para identifar los cambios' })
-						),
-						_react2.default.createElement(
-							'div',
-							null,
 							_react2.default.createElement(
-								'p',
+								'div',
 								null,
-								'La clave SHA-1 se compone de:'
-							),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p5', type: 'radio', value: 'r1', label: '40 caracteres', defaultChecked: 'checked' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p5', type: 'radio', value: 'r2', label: '41 caracteres' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p5', type: 'radio', value: 'r3', label: '44 caracteres' }),
-							_react2.default.createElement(_reactMaterialize.Input, { name: 'p5', type: 'radio', value: 'r4', label: 'Todas las anteriores' })
-						),
-						_react2.default.createElement('input', { type: 'submit', value: 'Listo' })
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement(
+										'span',
+										null,
+										'5'
+									),
+									' La clave SHA-1 se compone de:'
+								),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p5', type: 'radio', value: 'r1', label: '40 caracteres', defaultChecked: 'checked' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p5', type: 'radio', value: 'r2', label: '41 caracteres' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p5', type: 'radio', value: 'r3', label: '44 caracteres' }),
+								_react2.default.createElement(_reactMaterialize.Input, { name: 'p5', type: 'radio', value: 'r4', label: 'Todas las anteriores' }),
+								_react2.default.createElement(
+									_reactMaterialize.Button,
+									{ waves: 'light' },
+									'Listo'
+								)
+							)
+						)
 					)
 				);
 			}
