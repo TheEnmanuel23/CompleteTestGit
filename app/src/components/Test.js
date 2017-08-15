@@ -7,6 +7,8 @@ import Pregunta2 from './Pregunta2'
 import Pregunta3 from './Pregunta3'
 import Pregunta4 from './Pregunta4'
 import Pregunta5 from './Pregunta5'
+import { Button, Col, Card } from 'react-materialize'
+
 
 if (!firebase.apps.length)
   firebase.initializeApp(config)
@@ -46,8 +48,12 @@ class Test extends Component {
 
 	loadTest () {
 		if (this.state.testListo) {
-			return <div>
-				<h1>Listo!! Tu nota ha sido {this.state.notaFinal}/10</h1>
+			return <div className="card-panel">
+					<Col m={6} s={12}>
+						<Card className={this.state.notaFinal <= 5 ? 'deep-orange accent-3' : 'green accent-3'} title='Resultado' actions={[ <Button className="white nota-final-buttom" waves='light' node='a' href='http://www.enmisac.com/funnydev/2017/8/10/4-git/'> Volver</Button>]}>
+							<h1>{this.state.notaFinal}/10</h1>
+						</Card>
+					</Col>			
 			</div>
 		}
 		else {
@@ -59,17 +65,19 @@ class Test extends Component {
 		      {name: 'Pregunta 5', component: <Pregunta5 setRespuestas={this.setRespuestas} />}
 		    ]
 
-			return <div>
-				<form id="test" >
-					<div className='step-progress'>
-						<StepZilla 
-							steps={steps}
-							showNavigation = {false}
-							showSteps={false}
-						 	preventEnterSubmission={true}
-	           />
-					</div>
-				</form>
+			return <div className="card-panel test-component">
+				<div>
+					<form id="test" >
+						<div className='step-progress'>
+							<StepZilla 
+								steps={steps}
+								showNavigation = {false}
+								showSteps={false}
+							 	preventEnterSubmission={true}
+		           />
+						</div>
+					</form>
+				</div>
 			</div>
 		}
 	}

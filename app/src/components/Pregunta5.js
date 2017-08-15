@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDom from 'react-dom'
-import { Input, Button } from 'react-materialize'
+import { Input, Button, Col, Card } from 'react-materialize'
 
 class Pregunta5 extends Component{
 	constructor (props) {
@@ -18,12 +18,14 @@ class Pregunta5 extends Component{
 	render () {
 		return (
 			<div>
-				<p><span>5</span> La clave SHA-1 se compone de:</p>
-				<Input name="p5" type="radio" value="r1" label="40 caracteres" defaultChecked='checked' />
-				<Input name="p5" type="radio" value="r2" label="41 caracteres" />
-				<Input name="p5" type="radio" value="r3" label="44 caracteres" />
-				<Input name="p5" type="radio" value="r4" label="Todas las anteriores" />
-				<Button onClick={this.setRespuesta5}>Listo</Button>
+					<Col m={6} s={12}>
+					<Card className='grey lighten-4' title='5 - La clave SHA-1 se compone de' actions={[<Button className="black" onClick={this.setRespuesta5}>Listo</Button>]}>
+						<Input name="p5" type="radio" value="r1" label="40 caracteres" defaultChecked='checked' />
+						<Input name="p5" type="radio" value="r2" label="41 caracteres" />
+						<Input name="p5" type="radio" value="r3" label="44 caracteres" />
+						<Input name="p5" type="radio" value="r4" label="Todas las anteriores" />
+					</Card>
+				</Col>
 			</div>
 		)
 	}

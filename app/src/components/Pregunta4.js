@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDom from 'react-dom'
-import { Input, Button } from 'react-materialize'
+import { Input, Button, Col, Card } from 'react-materialize'
 
 class Pregunta4 extends Component{
 	constructor (props) {
@@ -19,12 +19,14 @@ class Pregunta4 extends Component{
 	render () {
 		return (
 			<div>
-				<p><span>4</span> Seleccione la afirmación errónea</p>
-				<Input name="p4" type="radio" value="r1" label="Si modifico un archivo, puedo recuperar el estado anterior" defaultChecked='checked' />
-				<Input name="p4" type="radio" value="r2" label="Si elimino un archivo, lo puedo recuperar al moverme un estado anterior del proyecto" />
-				<Input name="p4" type="radio" value="r3" label="Hay 3 estados que conforman el flujo de trabajo local de git" />
-				<Input name="p4" type="radio" value="r4" label="Git guarda el nombre del archivo y el código hash de sus contenidos para identifar los cambios" />
-				<Button onClick= {this.setRespuesta4}>Siguiente</Button>
+					<Col m={6} s={12}>
+					<Card className='grey lighten-4' title='4 - Seleccione la afirmación errónea' actions={[<Button className="black" onClick={this.setRespuesta4}>Siguiente</Button>]}>
+						<Input name="p4" type="radio" value="r1" label="Si modifico un archivo, puedo recuperar el estado anterior" defaultChecked='checked' />
+						<Input name="p4" type="radio" value="r2" label="Si elimino un archivo, lo puedo recuperar al moverme un estado anterior del proyecto" />
+						<Input name="p4" type="radio" value="r3" label="Hay 3 estados que conforman el flujo de trabajo local de git" />
+						<Input name="p4" type="radio" value="r4" label="Git guarda el nombre del archivo y el código hash de sus contenidos para identifar los cambios" />
+					</Card>
+				</Col>
 			</div>
 		)
 	}
