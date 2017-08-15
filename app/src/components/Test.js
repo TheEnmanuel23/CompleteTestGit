@@ -8,6 +8,7 @@ import Pregunta3 from './Pregunta3'
 import Pregunta4 from './Pregunta4'
 import Pregunta5 from './Pregunta5'
 import { Button, Col, Card } from 'react-materialize'
+import Account  from './Account/Index'
 
 
 if (!firebase.apps.length)
@@ -24,11 +25,18 @@ class Test extends Component {
 			p3: '',
 			p4: '',
 			p5: '',
-			save: false
+			save: false,
+			user: null
 		}
 		this.sendDataTest = this.sendDataTest.bind(this)
 		this.loadTest = this.loadTest.bind(this)
 		this.setRespuestas = this.setRespuestas.bind(this)
+	}
+
+	componentWillMount () {
+		firebase.auth().onAuthStateChanged((user) => {
+		 	this.setState({ user })
+		})
 	}
 
 	componentDidUpdate () {
@@ -114,7 +122,7 @@ class Test extends Component {
 			
 		
 		firebase.database().ref('users').push({
-			user: 'enmisac@gmail.com',
+			user: this.state.user.email,
 			tests : [ {
 				"id" : "test_git_intro",
 				"preguntas" : [ {
@@ -145,9 +153,10 @@ class Test extends Component {
 	}
 
 	render () {
-		return (
-			<div>{this.loadTest()}</div>
-		)
+		if (this.state.user)
+			return <div>{this.loadTest()}</div>
+		else
+			return <Account />		
 	}
 }
 
