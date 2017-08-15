@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Preguntas from './Preguntas';
+import Test from './Test';
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
           <h2>Test de Introducción a Git</h2>
         </div>
         <p className="App-intro">
-          <Preguntas />
+          <Test />
         </p>
       </div>
     );

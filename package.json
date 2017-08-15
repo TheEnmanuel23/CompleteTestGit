@@ -28,6 +28,7 @@
     "firebase": "^4.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-materialize": "^1.0.8"
+    "react-materialize": "^1.0.8",
+    "react-stepzilla": "^4.6.3"
   }
 }
