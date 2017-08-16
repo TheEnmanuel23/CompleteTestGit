@@ -30,5 +30,8 @@
     "react-dom": "^15.6.1",
     "react-materialize": "^1.0.8",
     "react-stepzilla": "^4.6.3"
+  },
+  "engines": {
+  "node": "v6.11.0"
   }
 }

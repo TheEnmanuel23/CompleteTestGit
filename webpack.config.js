@@ -1,9 +1,9 @@
 const path = require('path')
 
 const config = {
-	entry: './app/src/index',
+	entry: './src/index',
 	output: {
-		path: path.resolve(__dirname, './app/dist/js'),
+		path: path.resolve(__dirname, './dist/js'),
 		filename: 'bundle.js',
 		publicPath: "/assets/"
 	},
@@ -15,7 +15,7 @@ const config = {
 			{
 				test: /\.js$/,
 				exclude: '/node_modules/',
-				include: [path.resolve(__dirname, './app/src/')],
+				include: [path.resolve(__dirname, './src/')],
 				loader:'babel-loader',
 				options: {
 					presets: ['es2015', 'react', 'stage-2']
@@ -24,7 +24,7 @@ const config = {
 		]
 	},
 	devServer: {
-		contentBase: path.join(__dirname, './app'),
+		contentBase: path.join(__dirname, './'),
 		compress: true,
 		inline: true,
 		port: 7070,
