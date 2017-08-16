@@ -38635,6 +38635,7 @@ var Test = function (_Component) {
 
 			_firebase2.default.auth().onAuthStateChanged(function (user) {
 				if (user) {
+					console.log(user);
 					_this2.setState({ user: user });
 					_this2.props.setUserAvatar(user);
 				}
@@ -38749,7 +38750,7 @@ var Test = function (_Component) {
 			}
 
 			_firebase2.default.database().ref('users').push({
-				user: this.state.user.email,
+				user: this.state.user.email || this.state.user.displayName,
 				tests: [{
 					"id": "test_git_intro",
 					"preguntas": [{
