@@ -38634,8 +38634,10 @@ var Test = function (_Component) {
 			var _this2 = this;
 
 			_firebase2.default.auth().onAuthStateChanged(function (user) {
-				_this2.setState({ user: user });
-				_this2.props.setUserAvatar(user);
+				if (user) {
+					_this2.setState({ user: user });
+					_this2.props.setUserAvatar(user);
+				}
 			});
 		}
 	}, {
@@ -56514,9 +56516,9 @@ var SocialLogin = function (_Component) {
 		key: 'facebookLogin',
 		value: function facebookLogin() {
 			var provider = new _firebase2.default.auth.FacebookAuthProvider();
-			// provider.addScope('public_profile')
+			provider.addScope('public_profile');
 			_firebase2.default.auth().signInWithPopup(provider).then(function (result) {
-				console.log('Ha iniciado sesión >>' + result.user);
+				console.log('Ha iniciado sesión >>' + result);
 			}).catch(function (err) {
 				return console.log("errrrr>>" + err.message);
 			});

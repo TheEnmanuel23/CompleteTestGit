@@ -35,8 +35,10 @@ class Test extends Component {
 
 	componentWillMount () {
 		firebase.auth().onAuthStateChanged((user) => {
-		 	this.setState({ user })
-		 	this.props.setUserAvatar(user)
+			if (user) {
+		 		this.setState({ user })
+		 		this.props.setUserAvatar(user)
+		 	}
 		})
 	}
 

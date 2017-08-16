@@ -12,7 +12,7 @@ class SocialLogin extends Component {
 	}
 
 	googleLogin () {
-		var provider = new firebase.auth.GoogleAuthProvider()
+		let provider = new firebase.auth.GoogleAuthProvider()
 		firebase.auth().signInWithPopup(provider)
 			.then(result => {
 				console.log('Ha iniciado sesión')
@@ -21,7 +21,7 @@ class SocialLogin extends Component {
 	}
 
 	twitterLogin () {
-		var provider = new firebase.auth.TwitterAuthProvider()
+		let provider = new firebase.auth.TwitterAuthProvider()
 		firebase.auth().signInWithPopup(provider)
 			.then(result => {
 				console.log('Ha iniciado sesión')
@@ -30,11 +30,10 @@ class SocialLogin extends Component {
 	}
 
 	facebookLogin () {
-		var provider = new firebase.auth.FacebookAuthProvider()
-		// provider.addScope('public_profile')
-		firebase.auth().signInWithPopup(provider)
-			.then(result => {
-				console.log('Ha iniciado sesión >>' + result.user)
+		let provider = new firebase.auth.FacebookAuthProvider()
+		provider.addScope('public_profile')
+		firebase.auth().signInWithPopup(provider).then(function (result) {
+				console.log('Ha iniciado sesión >>' + result)
 			})
       .catch((err) => console.log("errrrr>>" + err.message) )
 	}
