@@ -6,7 +6,8 @@
   "scripts": {
     "prod": "webpack -p",
     "build": "webpack --watch --colors",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "start": "node server.js"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -25,6 +26,7 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "express": "^4.15.4",
     "firebase": "^4.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -32,6 +34,6 @@
     "react-stepzilla": "^4.6.3"
   },
   "engines": {
-  "node": "v6.11.0"
+    "node": "v6.11.0"
   }
 }
