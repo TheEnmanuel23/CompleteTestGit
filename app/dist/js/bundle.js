@@ -38496,15 +38496,24 @@ var App = function (_Component) {
   function App() {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+
+    _this.state = { user: null };
+    _this.setUserAvatar = _this.setUserAvatar.bind(_this);
+    return _this;
   }
 
   _createClass(App, [{
+    key: 'setUserAvatar',
+    value: function setUserAvatar(user) {
+      this.setState({ user: user });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'App' },
+        { className: 'App ' },
         _react2.default.createElement(
           'div',
           { className: 'App-header' },
@@ -38516,8 +38525,9 @@ var App = function (_Component) {
         ),
         _react2.default.createElement(
           'p',
-          { className: 'App-intro' },
-          _react2.default.createElement(_Test2.default, null)
+          { className: 'App-intro card-panel test-component' },
+          this.state.user ? _react2.default.createElement('img', { src: this.state.user.photoURL, alt: this.state.user.displayName, style: { 'margin-bottom': '15px', 'height': '100px', 'border-radius': '50%' } }) : '',
+          _react2.default.createElement(_Test2.default, { setUserAvatar: this.setUserAvatar })
         )
       );
     }
@@ -38596,10 +38606,10 @@ if (!_firebase2.default.apps.length) _firebase2.default.initializeApp(_fb_config
 var Test = function (_Component) {
 	_inherits(Test, _Component);
 
-	function Test() {
+	function Test(props) {
 		_classCallCheck(this, Test);
 
-		var _this = _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).call(this));
+		var _this = _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).call(this, props));
 
 		_this.state = {
 			testListo: false,
@@ -38625,6 +38635,7 @@ var Test = function (_Component) {
 
 			_firebase2.default.auth().onAuthStateChanged(function (user) {
 				_this2.setState({ user: user });
+				_this2.props.setUserAvatar(user);
 			});
 		}
 	}, {
@@ -38681,7 +38692,7 @@ var Test = function (_Component) {
 
 				return _react2.default.createElement(
 					'div',
-					{ className: 'card-panel test-component' },
+					null,
 					_react2.default.createElement(
 						'div',
 						null,
@@ -56503,11 +56514,11 @@ var SocialLogin = function (_Component) {
 		key: 'facebookLogin',
 		value: function facebookLogin() {
 			var provider = new _firebase2.default.auth.FacebookAuthProvider();
-			provider.addScope('public_profile');
+			// provider.addScope('public_profile')
 			_firebase2.default.auth().signInWithPopup(provider).then(function (result) {
-				console.log('Ha iniciado sesión');
+				console.log('Ha iniciado sesión >>' + result.user);
 			}).catch(function (err) {
-				return console.log(err.message);
+				return console.log("errrrr>>" + err.message);
 			});
 		}
 	}, {
@@ -56583,7 +56594,7 @@ exports = module.exports = __webpack_require__(412)(undefined);
 
 
 // module
-exports.push([module.i, ".App {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center; }\n\n.title-course {\n  font-family: sans-serif; }\n\n.test-component {\n  display: flex;\n  justify-content: center; }\n\n.nota-final-buttom {\n  color: black; }\n\n.google-buttom {\n  margin: 10px 0; }\n\n.socialLogin {\n  display: flex;\n  flex-direction: column; }\n", ""]);
+exports.push([module.i, ".App {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center; }\n\n.title-course {\n  font-family: sans-serif; }\n\n.test-component {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  align-items: center;\n  margin-bottom: 10px; }\n\n.nota-final-buttom {\n  color: black; }\n\n.google-buttom {\n  margin: 10px 0; }\n\n.socialLogin {\n  display: flex;\n  flex-direction: column; }\n", ""]);
 
 // exports
 

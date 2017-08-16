@@ -15,8 +15,8 @@ if (!firebase.apps.length)
   firebase.initializeApp(config)
 
 class Test extends Component {	
-	constructor () {
-		super()
+	constructor (props) {
+		super(props)
 		this.state = {
 			testListo : false,
 			notaFinal : 0,
@@ -36,6 +36,7 @@ class Test extends Component {
 	componentWillMount () {
 		firebase.auth().onAuthStateChanged((user) => {
 		 	this.setState({ user })
+		 	this.props.setUserAvatar(user)
 		})
 	}
 
@@ -73,8 +74,8 @@ class Test extends Component {
 		      {name: 'Pregunta 5', component: <Pregunta5 setRespuestas={this.setRespuestas} />}
 		    ]
 
-			return <div className="card-panel test-component">
-				<div>
+			return <div>
+				<div>				
 					<form id="test" >
 						<div className='step-progress'>
 							<StepZilla 

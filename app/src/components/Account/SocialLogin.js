@@ -31,12 +31,12 @@ class SocialLogin extends Component {
 
 	facebookLogin () {
 		var provider = new firebase.auth.FacebookAuthProvider()
-		provider.addScope('public_profile')
+		// provider.addScope('public_profile')
 		firebase.auth().signInWithPopup(provider)
 			.then(result => {
-				console.log('Ha iniciado sesión')
+				console.log('Ha iniciado sesión >>' + result.user)
 			})
-      .catch((err) => console.log(err.message) )
+      .catch((err) => console.log("errrrr>>" + err.message) )
 	}
 
 	render () {
