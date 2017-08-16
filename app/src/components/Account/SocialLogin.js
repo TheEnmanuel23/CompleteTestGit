@@ -8,7 +8,6 @@ class SocialLogin extends Component {
 		this.state = { username: null }
 		this.googleLogin = this.googleLogin.bind(this)
 		this.twitterLogin = this.twitterLogin.bind(this)
-		this.facebookLogin = this.facebookLogin.bind(this)
 	}
 
 	googleLogin () {
@@ -29,15 +28,6 @@ class SocialLogin extends Component {
       .catch((err) => console.log(err.message) )
 	}
 
-	facebookLogin () {
-		let provider = new firebase.auth.FacebookAuthProvider()
-		provider.addScope('public_profile')
-		firebase.auth().signInWithPopup(provider).then(function (result) {
-				console.log('Ha iniciado sesión >>' + result)
-			})
-      .catch((err) => console.log("errrrr>>" + err.message) )
-	}
-
 	render () {
 		return (
 			<div className="socialLogin">
@@ -47,10 +37,6 @@ class SocialLogin extends Component {
 					<a className="waves-effect btn red lighten-1 google-buttom" onClick={this.googleLogin}>
 						<i className="fa fa-google" aria-hidden="true"></i> Continuar con Google
 					</a>
-					<a className="waves-effect btn blue darken-4 facebook-buttom" onClick={this.facebookLogin}>
-						<i className="fa fa-facebook" aria-hidden="true"></i> Continuar con Facebook
-					</a>
-
 			</div>
 		)
 	}

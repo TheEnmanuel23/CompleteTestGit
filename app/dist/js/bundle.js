@@ -56488,7 +56488,6 @@ var SocialLogin = function (_Component) {
 		_this.state = { username: null };
 		_this.googleLogin = _this.googleLogin.bind(_this);
 		_this.twitterLogin = _this.twitterLogin.bind(_this);
-		_this.facebookLogin = _this.facebookLogin.bind(_this);
 		return _this;
 	}
 
@@ -56513,17 +56512,6 @@ var SocialLogin = function (_Component) {
 			});
 		}
 	}, {
-		key: 'facebookLogin',
-		value: function facebookLogin() {
-			var provider = new _firebase2.default.auth.FacebookAuthProvider();
-			provider.addScope('public_profile');
-			_firebase2.default.auth().signInWithPopup(provider).then(function (result) {
-				console.log('Ha iniciado sesión >>' + result);
-			}).catch(function (err) {
-				return console.log("errrrr>>" + err.message);
-			});
-		}
-	}, {
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
@@ -56540,12 +56528,6 @@ var SocialLogin = function (_Component) {
 					{ className: 'waves-effect btn red lighten-1 google-buttom', onClick: this.googleLogin },
 					_react2.default.createElement('i', { className: 'fa fa-google', 'aria-hidden': 'true' }),
 					' Continuar con Google'
-				),
-				_react2.default.createElement(
-					'a',
-					{ className: 'waves-effect btn blue darken-4 facebook-buttom', onClick: this.facebookLogin },
-					_react2.default.createElement('i', { className: 'fa fa-facebook', 'aria-hidden': 'true' }),
-					' Continuar con Facebook'
 				)
 			);
 		}
