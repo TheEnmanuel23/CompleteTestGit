@@ -8,7 +8,9 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+ENV API_URL='http://localhost:8000'
+
+RUN npm run prod
 
 EXPOSE 3000
 

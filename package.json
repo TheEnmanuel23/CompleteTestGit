@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "prod": "webpack -p",
-    "build": "webpack --watch --colors",
-    "dev": "webpack-dev-server",
-    "start": "node server.js"
+    "build": "env-cmd .env webpack --watch --colors",
+    "dev": "env-cmd .env webpack-dev-server",
+    "start": "env-cmd .env node server.js"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -27,7 +27,7 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
-    "dotenv-webpack": "^1.5.7",
+    "env-cmd": "^8.0.2",
     "express": "^4.15.4",
     "firebase": "^4.2.0",
     "react": "^15.6.1",
