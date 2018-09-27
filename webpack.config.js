@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack');
 const path = require('path')
 
 const config = {
@@ -23,6 +24,9 @@ const config = {
 			}
 		]
 	},
+	plugins: [
+    new Dotenv()
+  ],
 	devServer: {
 		contentBase: path.join(__dirname, './'),
 		compress: true,

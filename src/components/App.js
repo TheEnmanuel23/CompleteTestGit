@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import Test from './Test';
 import './style.scss'
+import config from '../config'
 
 class App extends Component {
   constructor () {
     super()
-    this.state = { user: null }
+    this.state = { user: null, data: [] }
     this.setUserAvatar = this.setUserAvatar.bind(this)
   }
 
   setUserAvatar (user) {
     this.setState({user})
+  }
+
+  componentDidMount () {
+    fetch(config.api).then(res => res.json()).then(({ data }) =>  this.setState({ data }))
   }
 
   render() {
@@ -26,6 +31,10 @@ class App extends Component {
           }
           <Test setUserAvatar={this.setUserAvatar} />
         </p>
+          <h2>Data</h2>
+         <ul>
+            {this.state.data.map(d => <li key={d.value}>{d.value}</li>)}
+          </ul>
       </div>
     );
   }
