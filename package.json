@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "webpack -p",
     "build": "webpack --watch --colors",
-    "dev": "webpack-dev-server --env.API_URL",
+    "dev": "webpack-dev-server",
     "start": "node server.js"
   },
   "devDependencies": {
